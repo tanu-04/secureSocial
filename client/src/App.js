@@ -9,9 +9,12 @@ function App() {
   const makeQuery = async () => {
     let result;
     try {
-      result = await axios.get("http://localhost:8080/geminiQuery", {
-        params: { items: text },
-      });
+      result = await axios.get(
+        "https://chatbot-edag.onrender.com/geminiQuery",
+        {
+          params: { items: text },
+        }
+      );
       setResponse(result.data);
       console.log(JSON.stringify(result));
     } catch (err) {
