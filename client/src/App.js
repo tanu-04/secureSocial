@@ -24,7 +24,7 @@ function App() {
   return (
     <div className="flex flex-col items-center bg-gptGray-900 justify-around h-screen">
       {response && (
-        <p className="border border-white p-5 mt-2 w-10/12 h-auto bg-gptGray-400 text-white rounded-lg mb-3 max-h-screen overflow-y-scroll">
+        <p className="border border-none p-5 mt-2 w-10/12 h-auto bg-gptGray-400 text-white rounded-lg mb-3 max-h-screen overflow-y-scroll">
           <ReactMarkdown>{response}</ReactMarkdown>
         </p>
       )}
