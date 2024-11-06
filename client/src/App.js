@@ -9,12 +9,9 @@ function App() {
   const makeQuery = async () => {
     let result;
     try {
-      result = await axios.get(
-        "https://chatbot-edag.onrender.com/geminiQuery",
-        {
-          params: { items: text },
-        }
-      );
+      result = await axios.get("http://localhost:8080/geminiQuery", {
+        params: { items: text },
+      });
       setResponse(result.data);
       console.log(JSON.stringify(result));
     } catch (err) {
@@ -24,7 +21,7 @@ function App() {
   return (
     <div className="flex flex-col items-center bg-gptGray-900 justify-around h-screen">
       {response && (
-        <p className="border border-white p-5 mt-2 w-10/12 h-auto bg-gptGray-400 text-white rounded-lg mb-3 max-h-screen overflow-y-scroll">
+        <p className="border border-none p-5 mt-2 w-10/12 h-auto bg-gptGray-400 text-white rounded-lg mb-3 max-h-screen overflow-y-scroll">
           <ReactMarkdown>{response}</ReactMarkdown>
         </p>
       )}
@@ -34,6 +31,7 @@ function App() {
           className="w-3/4 m-3 bg-inherit focus:outline-none flex flex-grow"
           placeholder="enter prompt"
           onChange={(e) => setText(e.target.value)}
+          onKeyDown={(e) => e.key == "Enter" && makeQuery()}
         ></input>
         <button
           onClick={makeQuery}

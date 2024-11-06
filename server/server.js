@@ -4,6 +4,7 @@ const dotenv = require("dotenv");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const { GoogleGenerativeAI } = require("@google/generative-ai");
+const bcrypt = require("bcrypt");
 
 dotenv.config();
 
