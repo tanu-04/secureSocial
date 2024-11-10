@@ -14,7 +14,7 @@ function RegisterButton() {
         className=" px-5 py-1 text-white rounded bg-gptGray-300 hover:bg-white hover:text-gptGray-900 transition duration-300"
         onClick={registerRedirect}
       >
-        sign-up
+        register
       </button>
     </div>
   );
