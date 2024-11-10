@@ -14,7 +14,7 @@ const Login = () => {
     console.log("entered password : " + password);
     try {
       const res = await axios.post(
-        "http://localhost:8080/login",
+        "https://chatbot-edag.onrender.com/login",
         {
           username: username,
           password: password,

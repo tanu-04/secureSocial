@@ -10,7 +10,7 @@ const Register = () => {
   const handleRegister = async () => {
     try {
       const result = await axios.post(
-        "http://localhost:8080/register",
+        "https://chatbot-edag.onrender.com/register",
         {
           username: username,
           password: password,
