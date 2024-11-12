@@ -9,6 +9,7 @@ import ChatBot from "./pages/chatbot";
 import Login from "./pages/login";
 import Register from "./pages/register";
 import LandingPage from "./pages/landing";
+import CreatePost from "./pages/createPost";
 
 function App() {
   const [token, setToken] = useState(localStorage.getItem("token")); // Retrieve token from localStorage
@@ -29,6 +30,7 @@ function App() {
           <Route path="/" element={<LandingPage />} />
           <Route path="/chatbot" element={<ChatBot token={token} />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/createPost" element={<CreatePost />} />
         </Routes>
       </Router>
     </div>

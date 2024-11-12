@@ -14,7 +14,7 @@ const Login = () => {
     console.log("entered password : " + password);
     try {
       const res = await axios.post(
-        "https://chatbot-edag.onrender.com/login",
+        "http://localhost:8080/api/auth/login",
         {
           username: username,
           password: password,
@@ -34,7 +34,7 @@ const Login = () => {
     } catch (err) {
       if (err.response) {
         setStatusMessage(err.response.data.message);
-        alert(statusMessage);
+        alert(err.response.data.message);
         console.log("error message : ", err.response.data.message);
       } else {
         console.log("error : " + err);
